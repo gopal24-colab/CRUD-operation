@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Javascript Login Page</title>
+  </head>
+
+  <body>
+    <div class="login_container">
+      <p id="alertMessage"><%= message %></p>
+      <div class="logo"></div>
+      <div class="title">Javascript Login Form</div>
+      <div class="sub_title">Using localstorage</div>
+
+      <div class="filds" id="login_page">
+        <form action="/auth/login" id="loginForm" method="POST">
+          <div class="form__div" id="admin_box">
+            <label class="label">
+              <div class="toggle">
+                <input
+                  class="toggle-state"
+                  type="checkbox"
+                  name="check"
+                  value="check"
+                  id="admin_check" />
+                <div class="indicator"></div>
+              </div>
+            </label>
+            <p>I'm Admin</p>
+          </div>
+          <div class="form__div">
+            <input
+              type="text"
+              name="email"
+              class="form__input"
+              placeholder=" "
+              id="login_username" />
+            <label for="" class="form__label">Username</label>
+          </div>
+          <div class="form__div">
+            <input
+              type="password"
+              name="password"
+              class="form__input"
+              placeholder=" "
+              id="login_password" />
+            <label for="" class="form__label">Password</label>
+          </div>
+          <div class="form__div" id="admin_div">
+            <input
+              type="password"
+              name="admin_id"
+              class="form__input"
+              placeholder=" "
+              id="login_admin_id" />
+            <label for="" class="form__label">Admin Id</label>
+          </div>
+          <input type="button" value="Login" class="login_btn" id="loginBtn" />
+          <div class="link">
+            <a>Forgot password?</a> or <a id="sign_up_page">Sign up</a>
+            <p id="loginResult"></p>
+          </div>
+        </form>
+      </div>
+
+      <!-- sign up form -->
+
+      <div class="filds" id="sign_up">
+        <div class="first_filds">
+          <form action="/auth/register" id="signupForm" method="POST">
+            <div class="form__div">
+              <input
+                type="text"
+                name="username"
+                class="form__input"
+                placeholder=" "
+                id="sign_username" />
+              <label for="" class="form__label">Username</label>
+              <span class="validation" id="nameValidation">
+                <ul>
+                  <li id="nameUppercase">
+                    First character should be Uppercase
+                  </li>
+                  <li id="nameDigit">Use digit number</li>
+                  <li id="nameSpacial">
+                    Name does't contain any spacial character
+                  </li>
+                  <li id="nameLength">At least 6 character</li>
+                </ul>
+              </span>
+            </div>
+            <div class="form__div">
+              <input
+                type="text"
+                name="email"
+                class="form__input"
+                placeholder=" "
+                id="sign_email" />
+              <label for="" class="form__label">Email</label>
+              <span class="validation" id="emailValidataion">
+                <ul>
+                  <li id="emailChar">Email contains '@' character</li>
+                  <li id="correct_dot_pos">' . ' in correct position</li>
+                  <li id="correct_email">Correct email</li>
+                </ul>
+              </span>
+            </div>
+            <div class="form__div" id="passDiv">
+              <input
+                type="password"
+                name="password"
+                class="form__input"
+                placeholder=" "
+                id="sign_password" />
+              <label for="" class="form__label">Password</label>
+              <span id="toggleBtn"></span>
+              <span class="validation" id="passwordValidation">
+                <ul>
+                  <li id="lower">At least one lowercase character</li>
+                  <li id="upper">At least one uppercase character</li>
+                  <li id="number">At least one number</li>
+                  <li id="spacial">At least one spcial character</li>
+                  <li id="length">At least 8 character</li>
+                </ul>
+              </span>
+            </div>
+            <div class="form__div">
+              <input
+                type="number"
+                name="mobile"
+                class="form__input"
+                placeholder=" "
+                id="sign_mob" />
+              <label for="" class="form__label">Mobile no</label>
+              <span class="validation" id="mobileValidation">
+                <ul>
+                  <li id="mob_digit">Mobile number contain 10 digits</li>
+                </ul>
+              </span>
+            </div>
+            <!-- <button type="submit" class="login_btn" id="signupBtn">Sign Up</button> -->
+            <input
+              type="button"
+              value="Register"
+              class="login_btn"
+              id="signupBtn" />
+            <div class="link">
+              <a>Aready have an account?</a> or
+              <a id="login_page_open">Login</a>
+              <p id="result"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
